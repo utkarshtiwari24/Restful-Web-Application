@@ -19,6 +19,8 @@ public class UserService {
         users.add(new User("Ankur",3,"Lead Engineer"));
     }
 
+    int userCount = 3;
+
     public List<User> getUsers() {
         return users;
     }
@@ -33,6 +35,8 @@ public class UserService {
     }
 
     public void saveUser(User newUser){
+        if(newUser.getId() == null)
+            newUser.setId(++userCount);
         users.add(newUser);
     }
 

@@ -1,14 +1,28 @@
 package com.github.tiwautk.SpringBootApplication.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
-    public User(String name, Integer id, String occupation) {
+	protected User() {
+
+	}
+	
+	public User(String name, Integer id, String occupation) {
+		super();
         this.name = name;
         this.id = id;
         this.occupation = occupation;
     }
 
     private String name;
+    
+    @Id
+    @GeneratedValue
     private int id;
+    
     private String occupation;
 
     public String getName() {
